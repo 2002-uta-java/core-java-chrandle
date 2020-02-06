@@ -135,7 +135,20 @@ public class EvaluationService {
 	 */
 	public int getScrabbleScore(String string) {
 		// TODO Write an implementation for this method declaration
-		return 0;
+		int scores[] = {1,2,3,4,5,8,10};
+		String letters[] = {"AEIOULNRST","DG","BCMP","FHVWY","K","JX","QZ"};
+		int sum = 0;
+		String stringupper = string.toUpperCase();
+		
+		for (int i = 0; i< stringupper.length(); i++) {
+			for (int j = 0; j<letters.length; j++) {
+				if (letters[j].contains(""+stringupper.charAt(i))) {
+					sum +=scores[j];
+				}
+			}
+		}
+		
+		return sum;
 	}
 
 	/**

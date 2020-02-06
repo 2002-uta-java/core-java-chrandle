@@ -15,7 +15,13 @@ public class EvaluationService {
 	 */
 	public String reverse(String string) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		int len = string.length();
+		String retval = "";
+		
+		for(int i = len; i>=0;i--) {
+			retval = retval + i;
+		}
+		return retval;
 	}
 
 	/**
@@ -27,8 +33,15 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String acronym(String phrase) {
+		
 		// TODO Write an implementation for this method declaration
-		return null;
+		String stringArr[] = phrase.split(" ");
+		String retval = "";
+		for (String i:stringArr) {
+			retval += i.charAt(0);
+		}
+		
+		return retval;
 	}
 
 	/**
@@ -82,17 +95,25 @@ public class EvaluationService {
 
 		public boolean isEquilateral() {
 			// TODO Write an implementation for this method declaration
-			return false;
+			if((this.getSideOne()==this.getSideTwo())&&(this.getSideTwo()==this.getSideThree())) {
+				return true;
+			} else {return false;}
+			
 		}
 
 		public boolean isIsosceles() {
 			// TODO Write an implementation for this method declaration
-			return false;
+			return !this.isScalene();
 		}
 
 		public boolean isScalene() {
 			// TODO Write an implementation for this method declaration
-			return false;
+			if((this.getSideOne()!=this.getSideTwo())&&
+					(this.getSideTwo()!=this.getSideThree())&&
+					(this.getSideOne()!=this.getSideThree())
+				) {
+				return true;
+			} else {return false;}
 		}
 
 	}

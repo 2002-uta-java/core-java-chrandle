@@ -1,6 +1,8 @@
 package com.revature.eval.java.core;
 
+import java.awt.Checkbox;
 import java.time.temporal.Temporal;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,8 +20,8 @@ public class EvaluationService {
 		int len = string.length();
 		String retval = "";
 		
-		for(int i = len; i>=0;i--) {
-			retval = retval + i;
+		for(int i = len-1; i>=0;i--) {
+			retval = retval + string.charAt(i);
 		}
 		return retval;
 	}
@@ -35,10 +37,10 @@ public class EvaluationService {
 	public String acronym(String phrase) {
 		
 		// TODO Write an implementation for this method declaration
-		String stringArr[] = phrase.split(" ");
+		String stringArr[] = phrase.split("[.\\ -]");
 		String retval = "";
 		for (String i:stringArr) {
-			retval += i.charAt(0);
+			retval += (""+i.charAt(0)).toUpperCase();
 		}
 		
 		return retval;
@@ -184,7 +186,15 @@ public class EvaluationService {
 	 */
 	public String cleanPhoneNumber(String string) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		String retval = string.replaceAll("[()-.\\D]","");
+		if ((retval.length() !=10) && (retval.length() !=10)){
+				throw new IllegalArgumentException(string);
+			} else {
+				while(retval.length()>10) {
+				retval.replaceFirst("\\d", "");
+			}
+		}
+		return retval;
 	}
 
 	/**
@@ -198,7 +208,19 @@ public class EvaluationService {
 	 */
 	public Map<String, Integer> wordCount(String string) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		Map<String, Integer> retMap = new HashMap<String, Integer>();
+		String[] stringArr = string.split(" ");
+		
+		for (String index: stringArr) {
+			int count = 0;
+			if (retMap.containsKey(index)) {continue;}
+			
+			for(String check: stringArr){
+				if(check==index) {count++;}
+			}
+			retMap.put(index, count);
+		}
+		return retMap;
 	}
 
 	/**
@@ -278,7 +300,19 @@ public class EvaluationService {
 	 */
 	public String toPigLatin(String string) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		String retVal = "";
+		String[] stringArr = string.split(" ");
+		String vowels = "AEIOU";
+		
+		for(String index: stringArr) {
+			 if(vowels.contains((""+index.charAt(0)).toUpperCase())){
+				 retVal += (string+"ay ");
+			 } else {
+				 String consonant = index.split("[^aeiouAEIOU]")[0];
+				 retVal += (string+consonant+"ay ");
+			 }
+		}
+		return retVal;
 	}
 
 	/**

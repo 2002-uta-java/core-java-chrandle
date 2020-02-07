@@ -209,14 +209,13 @@ public class EvaluationService {
 	public Map<String, Integer> wordCount(String string) {
 		// TODO Write an implementation for this method declaration
 		Map<String, Integer> retMap = new HashMap<String, Integer>();
-		String[] stringArr = string.split(" ");
+		String formattedString = string.replaceAll("[,+\\n\\r]"," ");
+		String[] stringArr = formattedString.split("\\s+");
 		
 		for (String index: stringArr) {
 			int count = 0;
-			if (retMap.containsKey(index)) {continue;}
-			
 			for(String check: stringArr){
-				if(check==index) {count++;}
+				if(check.contentEquals(index)) {count++;}
 			}
 			retMap.put(index, count);
 		}
@@ -263,7 +262,27 @@ public class EvaluationService {
 
 		public int indexOf(T t) {
 			// TODO Write an implementation for this method declaration
-			return 0;
+
+			
+			int searchIndex = (sortedList.size())/2;
+			
+			List<T> recList;
+				if (sortedList.get(searchIndex).equals(t)) {
+					return searchIndex+1;
+				} else {
+					
+					if((Integer)t< (Integer)sortedList.get(searchIndex)){
+						 recList = (sortedList.subList(0, searchIndex-1));
+						 BinarySearch<T> recSearch =  new BinarySearch<T>(recList);
+						 return recSearch.indexOf(t);
+					} else {
+						 recList =(sortedList.subList(searchIndex+1, sortedList.size()));
+						 BinarySearch<T> recSearch =  new BinarySearch<T>(recList);
+						 return searchIndex+recSearch.indexOf(t);
+					}
+					
+					
+				}
 		}
 
 		public BinarySearch(List<T> sortedList) {

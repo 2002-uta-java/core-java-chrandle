@@ -5,6 +5,8 @@ import java.time.temporal.Temporal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class EvaluationService {
 
@@ -318,16 +320,27 @@ public class EvaluationService {
 		String retVal = "";
 		String[] stringArr = string.split(" ");
 		String vowels = "AEIOU";
+		Pattern regexpattern = Pattern.compile("(?:(?![aeiouy])[a-z]){1,}");
 		
 		for(String index: stringArr) {
-			 if(vowels.contains((""+index.charAt(0)).toUpperCase())){
+			 
+			if(index.toUpperCase().charAt(0)=='Y') {
+				retVal += (index.substring(1)+index.charAt(0)+"ay ");
+			}else if((index.charAt(0)=='q')&&(index.charAt(1)=='u')){
+				retVal += (index.substring(2)+"quay ");
+			}else if(vowels.contains((""+index.charAt(0)).toUpperCase())){
 				 retVal += (string+"ay ");
 			 } else {
-				 String consonant = index.split("[^aeiouAEIOU]")[0];
-				 retVal += (string+consonant+"ay ");
+				 String word = index; 
+				 Matcher consonants = regexpattern.matcher(word);
+				 if (consonants.find()) {
+					 String firsthalf = consonants.group(0);
+					 retVal+= word.substring(firsthalf.length())+firsthalf+"ay ";
+				 }
 			 }
 		}
-		return retVal;
+		return retVal.trim();
+		
 	}
 
 	/**

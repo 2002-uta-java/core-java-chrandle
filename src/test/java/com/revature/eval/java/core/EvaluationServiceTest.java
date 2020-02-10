@@ -321,28 +321,28 @@ public class EvaluationServiceTest {
 	 /*******************************************************************
 		 * Question 9
 		 ******************************************************************/
-	/*
-	 * @Test public void singleDigitsAreArmstrongNumbers() { int input = 5;
-	 * 
-	 * assertTrue(evaluationService.isArmstrongNumber(input)); }
-	 * 
-	 * @Test public void noTwoDigitArmstrongNumbers() { int input = 10;
-	 * 
-	 * assertFalse(evaluationService.isArmstrongNumber(input)); }
-	 * 
-	 * @Test public void threeDigitNumberIsArmstrongNumber() { int input = 153;
-	 * 
-	 * assertTrue(evaluationService.isArmstrongNumber(input)); }
-	 * 
-	 * @Test public void threeDigitNumberIsNotArmstrongNumber() { int input = 100;
-	 * 
-	 * assertFalse(evaluationService.isArmstrongNumber(input)); }
-	 * 
-	 * @Test public void fourDigitNumberIsArmstrongNumber() { int input = 9474;
-	 * 
-	 * assertTrue(evaluationService.isArmstrongNumber(input)); }
-	 * 
-	 *//*******************************************************************
+	
+	  @Test public void singleDigitsAreArmstrongNumbers() { int input = 5;
+	  
+	  assertTrue(evaluationService.isArmstrongNumber(input)); }
+	  
+	  @Test public void noTwoDigitArmstrongNumbers() { int input = 10;
+	  
+	  assertFalse(evaluationService.isArmstrongNumber(input)); }
+	  
+	  @Test public void threeDigitNumberIsArmstrongNumber() { int input = 153;
+	  
+	  assertTrue(evaluationService.isArmstrongNumber(input)); }
+	  
+	  @Test public void threeDigitNumberIsNotArmstrongNumber() { int input = 100;
+	  
+	  assertFalse(evaluationService.isArmstrongNumber(input)); }
+	  
+	  @Test public void fourDigitNumberIsArmstrongNumber() { int input = 9474;
+	  
+	  assertTrue(evaluationService.isArmstrongNumber(input)); }
+	  
+	 /*******************************************************************
 		 * Question 10
 		 ******************************************************************/
 	/*

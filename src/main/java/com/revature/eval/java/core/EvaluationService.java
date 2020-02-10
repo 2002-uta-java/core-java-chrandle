@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.lang.Math;
 
 public class EvaluationService {
 
@@ -360,7 +361,13 @@ public class EvaluationService {
 	 */
 	public boolean isArmstrongNumber(int input) {
 		// TODO Write an implementation for this method declaration
-		return false;
+		char[] digits = String.valueOf(input).toCharArray();
+		int exponent  = digits.length;
+		 int sum = 0;
+		for (char index: digits) {
+			sum += Math.pow((double)Integer.valueOf(""+index),(double)exponent);
+		}
+		return sum==input;
 	}
 
 	/**

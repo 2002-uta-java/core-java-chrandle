@@ -4,6 +4,7 @@ import java.awt.Checkbox;
 import java.time.temporal.Temporal;
 import java.util.HashMap;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -382,7 +383,15 @@ public class EvaluationService {
 	 */
 	public List<Long> calculatePrimeFactorsOf(long l) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		List<Long> returnList = new ArrayList<Long>();
+		long inputnum = l;
+		for(long i = 2; i<= inputnum;i++) {
+			while(inputnum%i==0) {
+				returnList.add(i);
+				inputnum /= i;
+			}
+		}
+		return returnList;
 	}
 
 	/**

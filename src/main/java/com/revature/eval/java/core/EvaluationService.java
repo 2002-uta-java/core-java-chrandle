@@ -262,27 +262,23 @@ public class EvaluationService {
 
 		public int indexOf(T t) {
 			// TODO Write an implementation for this method declaration
-
 			
-			int searchIndex = (sortedList.size())/2;
+			int left = 0;
+			int right = sortedList.size();
+			int searchIndex = (left+(right-1))/2;
 			
-			List<T> recList;
-				if (sortedList.get(searchIndex).equals(t)) {
-					return searchIndex+1;
-				} else {
-					
-					if((Integer)t< (Integer)sortedList.get(searchIndex)){
-						 recList = (sortedList.subList(0, searchIndex-1));
-						 BinarySearch<T> recSearch =  new BinarySearch<T>(recList);
-						 return recSearch.indexOf(t);
-					} else {
-						 recList =(sortedList.subList(searchIndex+1, sortedList.size()));
-						 BinarySearch<T> recSearch =  new BinarySearch<T>(recList);
-						 return searchIndex+recSearch.indexOf(t);
-					}
-					
-					
+			while(!t.equals(sortedList.get(searchIndex))){
+				
+				if (left >= right) {
+					return -1;
+				} else if ((Integer)t<(Integer)sortedList.get(searchIndex)) {
+					right = searchIndex-1;
+				}else {
+					left = searchIndex+1;
 				}
+				searchIndex = (left+(right-1))/2;
+			}
+			return searchIndex;
 		}
 
 		public BinarySearch(List<T> sortedList) {

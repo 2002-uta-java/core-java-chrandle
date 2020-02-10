@@ -430,9 +430,33 @@ public class EvaluationService {
 
 		public String rotate(String string) {
 			// TODO Write an implementation for this method declaration
-			return null;
+			String retString = "";
+			String numerics = "1234567890";
+			String punctuation =".,'?!";
+			char[] characters= string.toCharArray();
+			
+			for(char index: characters) {
+				int conversion =index;
+				int code = index;
+				//lower case
+				if ((code>=97)&&(code<=122)) {
+					if (code+key <=122) {
+						conversion = code+key;
+					} else {
+						conversion = 97+code+key-122-1;
+					}
+				//upper case
+				} else if ((code>=65)&&(code<=90)){
+					if (code+key <=90) {
+						conversion = code+key;
+					} else {
+						conversion = 65+code+key-90-1;
+					}
+				}
+				retString += Character.toString((char)conversion);
+			}
+			return retString;
 		}
-
 	}
 
 	/**

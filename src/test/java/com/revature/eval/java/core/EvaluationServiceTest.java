@@ -441,43 +441,43 @@ public class EvaluationServiceTest {
 	 /*******************************************************************
 		 * Question 14
 		 ******************************************************************/
-	/*
-	 * @Test public void testDecodeExercism() { assertEquals("exercism",
-	 * EvaluationService.AtbashCipher.decode("vcvix rhn")); }
-	 * 
-	 * @Test public void testDecodeASentence() {
-	 * assertEquals("anobstacleisoftenasteppingstone",
-	 * EvaluationService.AtbashCipher.decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"
-	 * )); }
-	 * 
-	 * @Test public void testDecodeNumbers() { assertEquals("testing123testing",
-	 * EvaluationService.AtbashCipher.decode("gvhgr mt123 gvhgr mt")); }
-	 * 
-	 * @Test public void testDecodeAllTheLetters() {
-	 * assertEquals("thequickbrownfoxjumpsoverthelazydog",
-	 * EvaluationService.AtbashCipher.
-	 * decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt")); }
-	 * 
-	 *//*******************************************************************
+	
+	  @Test public void testDecodeExercism() { assertEquals("exercism",
+	  EvaluationService.AtbashCipher.decode("vcvix rhn")); }
+	  
+	  @Test public void testDecodeASentence() {
+	  assertEquals("anobstacleisoftenasteppingstone",
+	  EvaluationService.AtbashCipher.decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"
+	  )); }
+	  
+	  @Test public void testDecodeNumbers() { assertEquals("testing123testing",
+	  EvaluationService.AtbashCipher.decode("gvhgr mt123 gvhgr mt")); }
+	  
+	  @Test public void testDecodeAllTheLetters() {
+	  assertEquals("thequickbrownfoxjumpsoverthelazydog",
+	  EvaluationService.AtbashCipher.
+	  decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt")); }
+	  
+	 /*******************************************************************
 		 * Question 15
 		 ******************************************************************/
-	/*
-	 * @Test public void validIsbnNumber() {
-	 * assertTrue(evaluationService.isValidIsbn("3-598-21508-8")); }
-	 * 
-	 * @Test public void invalidIsbnCheckDigit() {
-	 * assertFalse(evaluationService.isValidIsbn("3-598-21508-9")); }
-	 * 
-	 * @Test public void validIsbnNumberWithCheckDigitOfTen() {
-	 * assertTrue(evaluationService.isValidIsbn("3-598-21507-X")); }
-	 * 
-	 * @Test public void checkDigitIsACharacterOtherThanX() {
-	 * assertFalse(evaluationService.isValidIsbn("3-598-21507-A")); }
-	 * 
-	 * @Test public void invalidCharacterInIsbn() {
-	 * assertFalse(evaluationService.isValidIsbn("3-598-2K507-0")); }
-	 * 
-	 *//*******************************************************************
+	
+	  @Test public void validIsbnNumber() {
+	  assertTrue(evaluationService.isValidIsbn("3-598-21508-8")); }
+	  
+	  @Test public void invalidIsbnCheckDigit() {
+	  assertFalse(evaluationService.isValidIsbn("3-598-21508-9")); }
+	  
+	  @Test public void validIsbnNumberWithCheckDigitOfTen() {
+	  assertTrue(evaluationService.isValidIsbn("3-598-21507-X")); }
+	  
+	  @Test public void checkDigitIsACharacterOtherThanX() {
+	  assertFalse(evaluationService.isValidIsbn("3-598-21507-A")); }
+	  
+	  @Test public void invalidCharacterInIsbn() {
+	  assertFalse(evaluationService.isValidIsbn("3-598-2K507-0")); }
+	  
+	 /*******************************************************************
 		 * Question 16
 		 ******************************************************************/
 	/*

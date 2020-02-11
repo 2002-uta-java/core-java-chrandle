@@ -574,16 +574,7 @@ public class EvaluationService {
 				}else if(index!=' '){
 					retVal+=index;
 				}
-				
-				
-				if(index!=' ') {
-					if(count == 4) {
-						retVal+=" ";
-						count=0;
-					}else {
-						count++;
-					}
-				}
+		
 			}
 			return retVal.trim();
 		}
@@ -613,10 +604,27 @@ public class EvaluationService {
 	 */
 	public boolean isValidIsbn(String string) {
 		// TODO Write an implementation for this method declaration
-		
-		  if (string.replaceAll(" -", "").length()==10) {
-		  
-		  } String[] stringArr= string.split(" -"); 
+		int sum = 0;
+		String isbn = string.replaceAll("-", "");
+
+		String numeric = "0123456789";
+		 if (isbn.length()!=10) {
+			 return false;
+		 } else {
+			 int count = 10;
+			 for(char index: isbn.toCharArray()) {
+				 if (index=='X') {
+					 sum+=10;
+				 } else if(numeric.indexOf((int)index)==-1){
+					 return false;
+				 } else {
+					 sum+=Character.getNumericValue(index)*count;
+				 }
+				 count--;
+			 }
+			 return (sum%11==0);
+		 }
+
 	}
 
 	/**

@@ -808,8 +808,21 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int solveWordProblem(String string) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+
+		String stringArr[] = string.toLowerCase().trim().split("[\\s\\?]");
+		
+		System.out.println(stringArr[3]);
+		switch (stringArr[3]) {
+		case "minus":
+			return Integer.parseInt(stringArr[2])-Integer.parseInt(stringArr[4]);
+		case "plus":
+			return Integer.parseInt(stringArr[2])+Integer.parseInt(stringArr[4]);
+		case "divided":
+			return Integer.parseInt(stringArr[2])/Integer.parseInt(stringArr[5]);
+		case "multiplied":
+			return Integer.parseInt(stringArr[2])*Integer.parseInt(stringArr[5]);
+		}
+		return -1;
 	}
 
 }

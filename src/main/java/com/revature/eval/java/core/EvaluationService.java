@@ -1,6 +1,10 @@
 package com.revature.eval.java.core;
 
 import java.awt.Checkbox;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.temporal.Temporal;
 import java.util.HashMap;
 import java.util.List;
@@ -642,20 +646,49 @@ public class EvaluationService {
 	 */
 	public boolean isPangram(String string) {
 		// TODO Write an implementation for this method declaration
-		return false;
+
+		String alpha = "abcdefghijklmnopqrstuvwxyz";
+		 boolean[] present = new boolean[alpha.length()];
+		 char[] charArr = string.toLowerCase().replaceAll(" ","").toCharArray();
+		 
+		 for (char index: charArr) {
+			 int loc = alpha.indexOf((int)index);
+			 if (loc!=-1) {
+				 if (!present[loc])
+					 present[loc]=true;
+			 }
+		 }
+		 
+		 for(boolean check:present) {
+			 if(!check) {
+				 return false;
+			 }
+		 }
+		 
+		 return true;
 	}
 
 	/**
 	 * 17. Calculate the moment when someone has lived for 10^9 seconds.
 	 * 
-	 * A gigasecond is 109 (1,000,000,000) seconds.
+	 * A gigasecond is 10^9 (1,000,000,000) seconds.
 	 * 
 	 * @param given
 	 * @return
 	 */
 	public Temporal getGigasecondDate(Temporal given) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		 
+		Duration s = Duration.ofSeconds((long)Math.pow(10, 9));
+		Duration d = Duration.ofDays(s.toDays());
+		LocalDate t = LocalDate.now();
+		if(given.getClass()==t.getClass()){
+			LocalDateTime convers = ((LocalDate)given).atTime(0,0);
+			return convers.plus(s); 
+		} else {
+			return ((LocalDateTime) given).plus(s); 
+		}
+
 	}
 
 	/**

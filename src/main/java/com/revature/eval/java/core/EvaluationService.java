@@ -5,10 +5,11 @@ import java.time.temporal.Temporal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.lang.Math;
+import java.lang.Math.*;
 
 public class EvaluationService {
 
@@ -471,9 +472,30 @@ public class EvaluationService {
 	 * @param i
 	 * @return
 	 */
-	public int calculateNthPrime(int i) {
+	public int calculateNthPrime(int i) throws IllegalArgumentException {
 		// TODO Write an implementation for this method declaration
-		return 0;
+		if (i ==0) {
+			throw new IllegalArgumentException();
+		}
+		int index = 1;
+		int check = 0;
+		int counter = 0;
+		while(counter < i){
+			index+=1;
+			
+			for(int j = 2; j<=index;j++) {				
+				if (index%j==0) {
+					check = j;
+					break;
+				}
+			}
+			if (check==index) {
+				counter+=1;
+			}
+		}
+		return index;
+	
+		
 	}
 
 	/**
@@ -501,7 +523,9 @@ public class EvaluationService {
 	 *
 	 */
 	static class AtbashCipher {
-
+		 static String alpha = "abcdefghijklmnopqrstuvwxyz";
+		 static String zeta = "zyxwvutsrqponmlkjihgfedcba";
+		 static String numeric = "0123456789";
 		/**
 		 * Question 13
 		 * 
@@ -510,7 +534,26 @@ public class EvaluationService {
 		 */
 		public static String encode(String string) {
 			// TODO Write an implementation for this method declaration
-			return null;
+			String retVal = "";
+			char[] charArr = string.toLowerCase().replaceAll("[,.]","").toCharArray();
+			int count = 0;
+			for(char index:charArr ) {
+				
+				if (alpha.indexOf((int)index)!=-1){
+					retVal +=zeta.charAt(alpha.indexOf((int)index));
+				}else if(index!=' '){
+					retVal+=index;
+				}
+				if(index!=' ') {
+					if(count == 4) {
+						retVal+=" ";
+						count=0;
+					}else {
+						count++;
+					}
+				}
+			}
+			return retVal.trim();
 		}
 
 		/**
@@ -521,7 +564,28 @@ public class EvaluationService {
 		 */
 		public static String decode(String string) {
 			// TODO Write an implementation for this method declaration
-			return null;
+			String retVal = "";
+			int count =0;
+			char[] charArr = string.toLowerCase().replaceAll("[,.]","").toCharArray();
+			for(char index:charArr ) {
+				
+				if (zeta.indexOf((int)index)!=-1){
+					retVal +=alpha.charAt(zeta.indexOf((int)index));
+				}else if(index!=' '){
+					retVal+=index;
+				}
+				
+				
+				if(index!=' ') {
+					if(count == 4) {
+						retVal+=" ";
+						count=0;
+					}else {
+						count++;
+					}
+				}
+			}
+			return retVal.trim();
 		}
 	}
 
@@ -549,7 +613,10 @@ public class EvaluationService {
 	 */
 	public boolean isValidIsbn(String string) {
 		// TODO Write an implementation for this method declaration
-		return false;
+		
+		  if (string.replaceAll(" -", "").length()==10) {
+		  
+		  } String[] stringArr= string.split(" -"); 
 	}
 
 	/**

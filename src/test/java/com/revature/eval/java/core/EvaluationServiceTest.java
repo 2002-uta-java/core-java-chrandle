@@ -396,49 +396,49 @@ public class EvaluationServiceTest {
 	 /*******************************************************************
 		 * Question 12
 		 ******************************************************************/
-	/*
-	 * @Test public void testFirstPrime() {
-	 * assertThat(evaluationService.calculateNthPrime(1), is(2)); }
-	 * 
-	 * @Test public void testSecondPrime() {
-	 * assertThat(evaluationService.calculateNthPrime(2), is(3)); }
-	 * 
-	 * @Test public void testSixthPrime() {
-	 * assertThat(evaluationService.calculateNthPrime(6), is(13)); }
-	 * 
-	 * @Test public void testBigPrime() {
-	 * assertThat(evaluationService.calculateNthPrime(10001), is(104743)); }
-	 * 
-	 * @Test public void testUndefinedPrime() {
-	 * expectedException.expect(IllegalArgumentException.class);
-	 * evaluationService.calculateNthPrime(0); }
-	 * 
-	 *//*******************************************************************
+	
+	  @Test public void testFirstPrime() {
+	  assertThat(evaluationService.calculateNthPrime(1), is(2)); }
+	  
+	  @Test public void testSecondPrime() {
+	  assertThat(evaluationService.calculateNthPrime(2), is(3)); }
+	  
+	  @Test public void testSixthPrime() {
+	  assertThat(evaluationService.calculateNthPrime(6), is(13)); }
+	  
+	  @Test public void testBigPrime() {
+	  assertThat(evaluationService.calculateNthPrime(10001), is(104743)); }
+	  
+	  @Test public void testUndefinedPrime() {
+	  expectedException.expect(IllegalArgumentException.class);
+	  evaluationService.calculateNthPrime(0); }
+	  
+	 /*******************************************************************
 		 * Question 13
 		 ******************************************************************/
-	/*
-	 * 
-	 * @Test public void testEncodeYes() { assertEquals("bvh",
-	 * EvaluationService.AtbashCipher.encode("yes")); }
-	 * 
-	 * @Test public void testEncodeOmgInCapital() { assertEquals("lnt",
-	 * EvaluationService.AtbashCipher.encode("OMG")); }
-	 * 
-	 * @Test public void testEncodeMindBlowingly() { assertEquals("nrmwy oldrm tob",
-	 * EvaluationService.AtbashCipher.encode("mindblowingly")); }
-	 * 
-	 * @Test public void testEncodeNumbers() { assertEquals("gvhgr mt123 gvhgr mt",
-	 * EvaluationService.AtbashCipher.encode("Testing,1 2 3, testing.")); }
-	 * 
-	 * @Test public void testEncodeDeepThought() { assertEquals("gifgs rhurx grlm",
-	 * EvaluationService.AtbashCipher.encode("Truth is fiction.")); }
-	 * 
-	 * @Test public void testEncodeAllTheLetters() {
-	 * assertEquals("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt",
-	 * EvaluationService.AtbashCipher.
-	 * encode("The quick brown fox jumps over the lazy dog.")); }
-	 * 
-	 *//*******************************************************************
+	
+	  
+	  @Test public void testEncodeYes() { assertEquals("bvh",
+	  EvaluationService.AtbashCipher.encode("yes")); }
+	  
+	  @Test public void testEncodeOmgInCapital() { assertEquals("lnt",
+	  EvaluationService.AtbashCipher.encode("OMG")); }
+	  
+	  @Test public void testEncodeMindBlowingly() { assertEquals("nrmwy oldrm tob",
+	  EvaluationService.AtbashCipher.encode("mindblowingly")); }
+	  
+	  @Test public void testEncodeNumbers() { assertEquals("gvhgr mt123 gvhgr mt",
+	  EvaluationService.AtbashCipher.encode("Testing,1 2 3, testing.")); }
+	  
+	  @Test public void testEncodeDeepThought() { assertEquals("gifgs rhurx grlm",
+	  EvaluationService.AtbashCipher.encode("Truth is fiction.")); }
+	  
+	  @Test public void testEncodeAllTheLetters() {
+	  assertEquals("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt",
+	  EvaluationService.AtbashCipher.
+	  encode("The quick brown fox jumps over the lazy dog.")); }
+	  
+	 /*******************************************************************
 		 * Question 14
 		 ******************************************************************/
 	/*

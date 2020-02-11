@@ -757,7 +757,27 @@ public class EvaluationService {
 	 */
 	public boolean isLuhnValid(String string) {
 		// TODO Write an implementation for this method declaration
-		return false;
+		String trimmed = string.replaceAll("[- ]", "");
+		char[] formatted =string.replaceAll(" ", "").toCharArray();
+		if (formatted.length<=1 || trimmed.replaceAll("\\D","").length()<trimmed.length()) {
+			return false;
+		}
+		int total = 0;
+		boolean even = false;
+		for(char index:formatted) {
+			if (!Character.isDigit(index)){
+				return false;
+			}
+			if (even) {
+				int doubled = Character.getNumericValue(index)*2;
+				total+= (doubled>9)?doubled-9:doubled;
+			} else {
+			 total+=Character.getNumericValue(index);
+			}
+			even=!even;
+		}
+
+		return (total%10==0);
 	}
 
 	/**

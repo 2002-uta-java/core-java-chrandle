@@ -568,26 +568,26 @@ public class EvaluationServiceTest {
 	 /*******************************************************************
 		 * Question 19
 		 ******************************************************************/
-	/*
-	 * @Test public void
-	 * testThatAValidCanadianSocialInsuranceNumberIsIdentifiedAsValidV1() {
-	 * assertTrue(evaluationService.isLuhnValid("046 454 286")); }
-	 * 
-	 * @Test public void
-	 * testThatAnInvalidCanadianSocialInsuranceNumberIsIdentifiedAsInvalid() {
-	 * assertFalse(evaluationService.isLuhnValid("046 454 287")); }
-	 * 
-	 * @Test public void testThatAnInvalidCreditCardIsIdentifiedAsInvalid() {
-	 * assertFalse(evaluationService.isLuhnValid("8273 1232 7352 0569")); }
-	 * 
-	 * @Test public void
-	 * testThatAddingANonDigitCharacterToAValidStringInvalidatesTheString() {
-	 * assertFalse(evaluationService.isLuhnValid("046a 454 286")); }
-	 * 
-	 * @Test public void testThatStringContainingPunctuationIsInvalid() {
-	 * assertFalse(evaluationService.isLuhnValid("055-444-285")); }
-	 * 
-	 *//*******************************************************************
+	
+	  @Test public void
+	  testThatAValidCanadianSocialInsuranceNumberIsIdentifiedAsValidV1() {
+	  assertTrue(evaluationService.isLuhnValid("046 454 286")); }
+	  
+	  @Test public void
+	  testThatAnInvalidCanadianSocialInsuranceNumberIsIdentifiedAsInvalid() {
+	  assertFalse(evaluationService.isLuhnValid("046 454 287")); }
+	  
+	  @Test public void testThatAnInvalidCreditCardIsIdentifiedAsInvalid() {
+	  assertFalse(evaluationService.isLuhnValid("8273 1232 7352 0569")); }
+	  
+	  @Test public void
+	  testThatAddingANonDigitCharacterToAValidStringInvalidatesTheString() {
+	  assertFalse(evaluationService.isLuhnValid("046a 454 286")); }
+	  
+	  @Test public void testThatStringContainingPunctuationIsInvalid() {
+	  assertFalse(evaluationService.isLuhnValid("055-444-285")); }
+	  
+	 /*******************************************************************
 		 * Question 20
 		 ******************************************************************//*
 																			 * @Test public void testSingleAddition1() {

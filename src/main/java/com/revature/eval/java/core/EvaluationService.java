@@ -706,7 +706,17 @@ public class EvaluationService {
 	 */
 	public int getSumOfMultiples(int i, int[] set) {
 		// TODO Write an implementation for this method declaration
-		return 0;
+		ArrayList<Integer> found = new ArrayList<Integer>(); 
+		int sum = 0;
+		for(int index = 0; index<i;index++) {
+			for(int j :set) {
+				if ((!found.contains(index*j))&&(index*j<i)) {
+					found.add(j*index);
+					sum +=index*j;
+				}
+			}
+		}
+		return sum;
 	}
 
 	/**
